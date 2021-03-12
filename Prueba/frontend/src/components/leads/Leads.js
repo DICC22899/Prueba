@@ -20,25 +20,30 @@ export class Leads extends Component{
                 <h2>LIDERES</h2>
                 <table className="table table-striped">
                     <thead>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th/>
-                    </thead>
-                    <tbody>
-                    {this.props.leads.map(lead =>(
-                        <tr key={lead.id}>
-                            <td>{lead.id}</td>
-                            <td>{lead.name}</td>
-                            <td>{lead.email}</td>
-                            <td>{lead.message}</td>
-                            <td>
-                                <button onClick={this.props.deleteLead.bind(this,lead.id)} className="btn btn-danger btn-sm">
-                                    Delete
-                                </button>
-                            </td>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th></th>
                         </tr>
+                    </thead>
+                    <tbody >
+                    {this.props.leads.map(lead =>(
+                       
+                            <tr key={lead.id}>
+                                <td>{lead.id}</td>
+                                <td>{lead.name}</td>
+                                <td>{lead.email}</td>
+                                <td>{lead.message}</td>
+                                <td>
+                                    <button onClick={this.props.deleteLead.bind(this,lead.id)} className="btn btn-danger btn-sm">
+                                        Delete
+                                        {" "}
+                                    </button>
+                                </td>
+                            </tr>
+                        
                     ))}
                     </tbody>
                 </table>
@@ -47,8 +52,8 @@ export class Leads extends Component{
     }
 }
 
-const mapStateProps = state => ({
+const mapStateToProps = state => ({
     leads: state.leads.leads
 });
 
-export default connect(mapStateProps,{getLeads,deleteLead})(Leads);
+export default connect(mapStateToProps,{getLeads,deleteLead})(Leads);
