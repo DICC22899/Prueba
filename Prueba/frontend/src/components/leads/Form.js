@@ -35,7 +35,7 @@ export class Form extends Component{
                 <h2>AGREGAR</h2>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label> Nombre</label>
+                        <label> Nombre:</label>
                         <input
                             type="text"
                             className="form-control"
@@ -45,7 +45,7 @@ export class Form extends Component{
                         />
                     </div>
                     <div className="form-group">
-                        <label> EMAIL</label>
+                        <label> EMAIL:</label>
                         <input
                             type="email"
                             className="form-control"
@@ -55,7 +55,7 @@ export class Form extends Component{
                         />
                     </div>
                     <div className="form-group">
-                        <label> Mensaje</label>
+                        <label> Mensaje:</label>
                         <textarea
                             type="text"
                             className="form-control"
@@ -66,7 +66,7 @@ export class Form extends Component{
                     </div>
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary">
-                            Agregar
+                            Agregar 
                         </button>
                     </div>
                 </form>
