@@ -47,8 +47,8 @@ export class Leads extends Component{
     }
 }
 
-const mapStateProps = state => ({
+const mapStateToProps = state => ({
     leads: state.leads.leads
 });
 
-export default connect(mapStateProps,{getLeads,deleteLead})(Leads);
+export default connect(mapStateToProps,{getLeads,deleteLead})(Leads);
