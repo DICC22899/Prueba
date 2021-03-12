@@ -1,9 +1,13 @@
-import React, {Component} from'react'
+import React, {Component} from'react';
+
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addLead } from '../../actions/leads';
 
-export class Form extends Component{
+
+
+
+export class Form extends Component { 
     state ={
         name: '',
         email: '',
@@ -34,6 +38,7 @@ export class Form extends Component{
 
     render() {
         const{name,email,message}=this.state;
+
         return (
             <div className="card card-body mt-4 mb-4">
                 <h2>AGREGAR</h2>

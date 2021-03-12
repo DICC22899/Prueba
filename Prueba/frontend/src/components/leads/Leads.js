@@ -1,9 +1,28 @@
 import React, {Component,Fragment} from 'react'
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getLeads,deleteLead} from "../../actions/leads";
+import { Link } from 'react-router-dom';
+import { Form } from './Form';
+/* 
+const PortalComponent = ({ onClose })=> {
+    return ReactDOM.createPortal(
+      <div className="modal" onClick={onClose}>
+        <Form />
+      </div>,
+      // get outer DOM element
+      document.getElementById("modal")
+    );
+  }; */
 
-export class Leads extends Component{
+
+
+export class Leads extends Component{ 
+   /*  state = {
+        modalOpen: false
+    }; */
+
     static propTypes = {
         leads: PropTypes.array.isRequired,
         getLeads: PropTypes.func.isRequired,
@@ -18,6 +37,17 @@ export class Leads extends Component{
         return(
             <Fragment>
                 <h2>LIDERES</h2>
+                <button className="btn btn-success">Agrega Modal</button>
+                {/* <button onClick={() => this.setState({ modalOpen: true })}>
+                    Open modal
+                </button> */}
+           {/*      {this.state.modalOpen && (
+                    <PortalComponent onClose={() => this.setState({ modalOpen: false })}>
+                        <h1>This is modal content</h1>
+                    </PortalComponent>
+                )} */}
+                
+                <Link to="/leads/add" className="btn btn-primary">Agregar</Link>
                 <table className="table table-striped">
                     <thead>
                         <tr>

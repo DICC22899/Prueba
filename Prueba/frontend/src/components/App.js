@@ -1,8 +1,9 @@
 import React, {Component,Fragment} from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Header from "./layout/Header";
-import Dashboard from "./leads/Dashboard";
+
 import Alerts from "./layout/Alerts";
 
 import { Provider as AlertProvider } from 'react-alert';
@@ -11,6 +12,8 @@ import AlertTemplate from 'react-alert-template-basic';
 import {Provider} from 'react-redux';
 import store from '../store';
 
+import Form from './leads/Form';
+import Leads from './leads/Leads';
 //Alert Options
 const alertOptions = {
     timeout: 3000,
@@ -25,10 +28,12 @@ class App extends Component {
                 <Fragment>
                     <Header />
                     <Alerts></Alerts>
-                    <div className="container">
-                        <Dashboard />
-
-                    </div>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/" component={Leads} />
+                            <Route exact path="/leads/add" component={Form} />
+                        </Switch>
+                    </BrowserRouter>
                 </Fragment>
                 </AlertProvider>
             </Provider>
