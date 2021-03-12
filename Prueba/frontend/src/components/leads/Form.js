@@ -8,7 +8,11 @@ export class Form extends Component{
         name: '',
         email: '',
         message:''
-    }
+    };
+
+    static propTypes = {
+        addLead: PropTypes.func.isRequired
+    };
 
     static propTypes = {
         addLead: PropTypes.func.isRequired
